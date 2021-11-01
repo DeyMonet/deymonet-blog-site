@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PersonalBlogSite</title>
+  <base href="/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- External Imports -->
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- FONTAWESOME -->
+  <script src="https://kit.fontawesome.com/aa1831bd18.js" crossorigin="anonymous"></script>
+
+  <!-- OKTA SIGNIN WIDGET -->
+  <!--
+    The npm installation of @okta/okta-signin-widget did not display the css/stylesheet on the website.
+    Therefore, the link + script imports added onto the index.html head was required to achieve what the initial import could not do.
+    
+    The issue is still currently unknown, even while upgrading and downgrading to different versions of the widget.
+  -->
+  <script src="https://global.oktacdn.com/okta-signin-widget/5.12.0/js/okta-sign-in.min.js" type="text/javascript"></script>
+  <link href="https://global.oktacdn.com/okta-signin-widget/5.12.0/css/okta-sign-in.min.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

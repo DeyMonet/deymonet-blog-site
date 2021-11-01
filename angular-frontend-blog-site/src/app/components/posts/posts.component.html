@@ -1,0 +1,26 @@
+<div class="blog-post-page">
+    <div class="container-fluid">
+        <div class="post-page">
+            <div class="post-header">
+                <p>{{ post.title }}</p>
+            </div>
+            <div class="post-body"  style="white-space: pre-wrap;">
+                <p>{{ post.content }}</p>
+            </div>
+            <div class="post-date">
+                 <!-- Check to see if the post got updated recently -->
+                <div *ngIf="( ( post?.published | date: 'longDate') !== (post?.lastUpdated | date: 'longDate') ); else currentPublish">
+                    <p>last updated on {{ post.lastUpdated | date: 'longDate' }}</p>
+                </div>
+                <ng-template #currentPublish>
+                    <p>Created {{ post.published | date: 'longDate'}}</p>
+                </ng-template>
+            </div>
+            <div class="post-body-bottom">
+                <a routerLink="/home">
+                    <p>Go Back</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

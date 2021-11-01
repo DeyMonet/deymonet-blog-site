@@ -1,0 +1,56 @@
+<div class="blog-create-post-page">
+    <div class="container">
+        <div class="create-post-header">
+            <h3>Create a new post!</h3>
+        </div>
+
+        <!-- Form -->
+        <form [formGroup]="createPostForm" (ngSubmit)="onSubmit()">
+            <div class="form-group create-post-form">
+                <div class="title-tag-form">
+                    <div class="row">
+                        <!-- Title -->
+                        <div class="col-8">
+                            <input formControlName="title" type="text" class="post-title form-control" placeholder="Title*">
+                            <div *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+                                <div *ngIf="title?.errors?.required" class="alert alert-danger" role="alert" style="margin: auto 5%;">
+                                    Title is required!
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Topic Tag -->
+                        <div class="col-3">
+                            <select formControlName="topicTag"  class="post-topic-tag form-control">
+                                <option></option>
+                                <option *ngFor="let topic of topics">
+                                    {{ topic.topicName }}
+                                </option>
+                            </select>
+                            <div *ngIf="topicTag?.invalid && (topicTag?.dirty || topicTag?.touched)" class="alert alert-danger" role="alert">
+                                <div *ngIf="topicTag?.errors?.required">
+                                    Topic is required!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="form-group">
+                    <div>
+                        <textarea formControlName="content" class="form-control" rows="10" placeholder="Content ...*"></textarea>
+                        <div *ngIf="content?.invalid && (content?.dirty || content?.touched)">
+                            <div *ngIf="content?.errors?.required" class="alert alert-danger" role="alert" style="margin: 10px 5%;">
+                                Content is required!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="create-btn btn btn-primary"><i class="fas fa-plus-circle"></i> Create</button>
+            </div>
+        </form>
+        <button type="button" class="home-btn btn btn-dark"><i class="fas fa-home"></i> Back to Home</button>
+    </div>
+</div>

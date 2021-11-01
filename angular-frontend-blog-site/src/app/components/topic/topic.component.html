@@ -1,0 +1,13 @@
+<div class="blog-topic">
+    <div  class="container ">
+      <ul class="nav row blog-topic-list">
+        <li *ngFor="let topics of topic" class="nav-item col">
+          <a 
+            routerLink="/topic/{{ topics.topicName }}"
+            routerLinkActive="active-link">
+            <p>{{ topics.topicName }}</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>

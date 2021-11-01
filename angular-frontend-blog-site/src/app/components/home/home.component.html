@@ -1,0 +1,24 @@
+<div class="home-page-content">
+    <div class="home-posts">
+        <div *ngFor="let post of posts">
+            <div class="post-card">
+                <div class="card-header">
+                    <p class="post-card-title"> {{ post.title }} </p>
+                    <p class="post-card-date">{{ post.published | date:'longDate'}}</p>
+                </div>
+                <div class="card-body">
+                    <p class="post-card-desc">{{ post.content | slice:0:200 }}<span style="opacity: 75%; letter-spacing: 2.5px; font-style: italic;">...</span></p>
+                    <div class="post-card-seemore">
+                        <a routerLink="/post/{{ post.title }}"
+                        routerLinkActive="active-link">
+                        <p>See More >></p>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        <div *ngIf="posts?.length === 0">
+            <p>Whoops! Nothing here at the moment. Don't worry, I post new things here pretty often. You'll see something pop-up eventually.</p>
+        </div>
+        </div>
+    </div>
+</div>

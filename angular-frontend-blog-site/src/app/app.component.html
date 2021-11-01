@@ -1,0 +1,38 @@
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-sm justify-content-end">
+    <ul class="navbar-nav blog-nav-tabs">
+      <app-adminpage></app-adminpage>
+      <li class="nav-item h5"><a class="nav-link" routerLink="/home"><i class="fas fa-home"></i> Home</a></li>
+      <li class="nav-item h5"><a class="nav-link" routerLink="/about"><i class="fas fa-question-circle"></i> About</a></li>
+      <li class="nav-item h5"><a class="nav-link" href="mailto:dasia.monet98@outlook.com"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Header + Description -->
+<div class="blog-header">
+  <div class="container-fluid">
+    <div>
+      <h2>Dasia Melvin</h2>
+    </div>
+    <div class="blog-desc">
+      <p>The blog of a Java enthusiast and caffeine addicted developer.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Listed Categories -->
+<app-topic></app-topic>
+
+<!-- Content -->
+<div class="blog-content">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="fixed-bottom">
+  <div class="credits">
+    <p>Copyright© DeyMonet 2021. All rights reserved.</p>
+  </div>
+</footer>

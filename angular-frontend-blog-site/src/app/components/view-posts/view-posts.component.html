@@ -1,0 +1,107 @@
+<div class="view-posts-page">
+    <div class="container-fluid">
+        <div class="view-post-header">
+            <h3>View Posts</h3>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Last Updated</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tempPosts of posts; index as i">
+                    <th scope="row">
+                        <p style="font-weight: 500;">
+                            {{ i + 1 }}
+                        </p>
+                    </th>
+                    <td>
+                        <p class="view-post-title" style="font-weight: 400;">
+                            <a routerLink="/post/{{ tempPosts.title }}"
+                                routerLinkActive="active-link">
+                                {{ tempPosts.title }}
+                            </a>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            {{ tempPosts.content | slice:0:75 }}<span style="opacity: 75%; letter-spacing: 2.5px; font-style: italic;">...</span>
+                        </p>
+                    </td>
+                    <td>
+                        <p style="font-weight: 400;">
+                            {{ tempPosts.topicTag }}
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            {{ tempPosts.lastUpdated | date: 'longDate' }}
+                        </p>
+                    </td>
+                    <td>
+                        <div class="view-card-buttons">
+                            <button (click)="open(updatePostForm)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Update</button>
+                            <button (click)="deletePost(tempPosts.id)" type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </td>
+                    
+
+                    <ng-template #updatePostForm let-modal>
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="modal-basic-title">Update Post</h4>
+                            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <form [formGroup]="updatePostFormGroup">
+                            <div class="form-group">
+                                <!-- Title -->
+                                <div class="input-group">
+                                    <input formControlName="title" type="text" class="form-control" placeholder="Title">
+                                </div>
+                                <!-- Content -->
+                                <div class="input-group">
+                                    <textarea formControlName="content" class="form-control" placeholder="Content" rows="10"></textarea>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-outline-primary" (click)="updatePost(tempPosts.id)">Update</button>
+                        </div>
+                    </ng-template>
+                    
+                
+        </table>
+        <div *ngFor="let tempPosts of posts">
+            <div class="view-card-lists">
+                <!-- <div class="view-card-header">
+                    <p>{{ tempPosts.title }}</p>
+                </div>
+                <div class="view-card-desc" style="white-space: pre-line;">
+                    <p>{{ tempPosts.content | slice:0:100 }}<span style="opacity: 75%; letter-spacing: 2.5px; font-style: italic;">...</span></p>
+                </div>
+                <div class="view-card-date">
+                    <p>{{ tempPosts.published | date: 'longDate' }}</p>
+                </div> -->
+               
+                <!-- Update and Delete buttons ...  -->
+                
+
+
+                
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>
