@@ -31,12 +31,18 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
     white-space: normal;
-    background-color: #f7f7f7;
+    background-color: #131313;
+    color: #fff;
 }
 
 p {
     font-weight: 200;
     font-size: 20px;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
 }
 
 li a:link,
@@ -50,12 +56,17 @@ li a:visited {
 /*********
     BLOG HEADER
 *********/
+.blog-cover-bg {
+    background-image: url("assets/img/header-bg.jpg");
+    background-size: cover;
+}
 
 .blog-topic { padding: 1.5%; }
 
 /***** Top Navigation *****/
 .blog-nav-tabs li,
 .blog-nav-tabs li a {
+    color: #fff;
     transition: 0.5s color;
 }
 
@@ -68,6 +79,7 @@ li a:visited {
 .blog-header {
     padding: 7% 2% 0;
     text-align: center;
+    
 }
 
 .blog-header h2 {
@@ -79,13 +91,13 @@ li a:visited {
 
 .blog-desc p{
     font-size: 23px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /***** Topic *****/
 .blog-topic-list {
     text-align: center;
-    background-color: #e0e0e0;
+    background-color: #282828;
     border-radius: 10px;
 }
 
@@ -97,7 +109,7 @@ li a:visited {
     transition: 0.5s color;
 }
 
-.blog-topic-list li p:hover { color: #fff; }
+.blog-topic-list li p:hover { color: rgb(0, 255, 136); }
 
 
 /*********
@@ -107,10 +119,12 @@ li a:visited {
 
 .blog-content {
     padding: 2%;
-    background-color: #fff;
+    /* background-color: rgb(231, 231, 231); */
+    background-color: #282828;
     text-align: center;
 }
 
+/***** About *****/
 .about-header
 { padding: 7px 0 17px; }
 
@@ -118,29 +132,49 @@ li a:visited {
 .about-header h3
 { font-size: 27px; }
 
-.about-desc 
-{ padding-top: 1%; }
+.about-desc { 
+    padding: 2.5% 0;
+}
 
-.about-desc p { 
+.about-desc p {
     font-weight: 300;
     text-align: left;
+    padding-bottom: 1%;
+}
+
+.about-sub-header {
+    text-align: center;
+    margin: 1% 0;
+}
+
+.about-learning,
+.about-learning p {
+    font-size: 21px;
+}
+
+.about-header,
+.about-desc p,
+.about-sub-header,
+.about-learning p {
+    color: #fff;
 }
 
 /***** Post List *****/
 .post-card {
-    border: 1px solid rgb(221, 221, 221);
+    border: 1px solid rgb(104, 104, 104);
     border-radius: 10px 0;
     margin-bottom: 5%;
 }
 
 .post-card-title a{
-    color: #000;
+    
     text-decoration: none;
 }
 
 .post-card-title {
     font-size: 23px;
     font-weight: 500;
+    
 }
 
 .post-card-title,
@@ -162,6 +196,13 @@ li a:visited {
     font-size: 20px;
 }
 
+.post-card-title,
+.post-card-date,
+.post-card-desc,
+.post-card-seemore p{
+    color: #fff;
+}
+
 .post-card-seemore p{
     font-weight: 400;
     display: inline;
@@ -181,6 +222,7 @@ li a:visited {
 .blog-post-bottom p {
     font-weight: 400;
     font-size: 18px;
+    color: #fff;
     transition: 0.2s color;
 }
 
@@ -198,7 +240,7 @@ li a:visited {
 
 .post-page {
     border-radius: 10px 0;
-    background-color: #f7f7f7;
+    background-color: #131313;
     margin-bottom: 5%;
 }
 
@@ -297,7 +339,7 @@ li a:visited {
 .view-post-title a:active,
 .view-post-title a:visited { 
     text-decoration: none;
-    color: #000;
+    color: #fff;
     transition: 0.2s color;
 }
 

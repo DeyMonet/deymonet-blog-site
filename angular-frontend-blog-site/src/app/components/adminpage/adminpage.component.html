@@ -6,17 +6,17 @@
     </div>
     <div *ngIf="isAuthenticated" class="dash-button">
         <li class="nav-item h5">
-            <button type="button" routerLink="/create-post" class="btn btn-outline-dark">Create Post</button>
+            <button type="button" routerLink="/create-post" class="btn btn-outline-light">Create Post</button>
         </li>
     </div>
     <div *ngIf="isAuthenticated" class="view-button">
         <li class="nav-item h5">
-            <button type="button" routerLink="/view-posts" class="btn btn-outline-dark">View Posts</button>
+            <button type="button" routerLink="/view-posts" class="btn btn-outline-light">View Posts</button>
         </li>
     </div>
     <div *ngIf="isAuthenticated" class="logout-button">
         <li class="nav-item h5">
-            <button type="button" (click)="logout()" class="btn btn-outline-dark"><i class="fas fa-sign-out-alt"></i> Signout</button> 
+            <button type="button" (click)="logout()" class="btn btn-outline-light"><i class="fas fa-sign-out-alt"></i> Signout</button> 
         </li>
     </div>
 </div>
