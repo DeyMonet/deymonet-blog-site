@@ -1,4 +1,4 @@
-<div class="blog-post-list">
+<div class="blog-post-list pt-5">
     <div class="container">
         <div *ngFor="let post of posts">
             <div class="post-card">
@@ -19,12 +19,12 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="posts?.length === 0">
+        <div *ngIf="posts?.length === 0" class="pt-3 pb-3">
             <p style="color: #fff;">Whoops! Nothing here at the moment. Don't worry, I post new things here pretty often. You'll see something pop-up eventually.</p>
         </div>
         <div class="blog-post-bottom">
             <a routerLink="/home">
-                <p>Back to Home</p>
+                <p class="post-list-home-link">Back to Home</p>
             </a>
         </div>
     </div>

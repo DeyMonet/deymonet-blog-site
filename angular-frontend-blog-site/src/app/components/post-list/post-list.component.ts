@@ -35,7 +35,6 @@ export class PostListComponent implements OnInit {
     }
 
     this.postService.getPostsByTopicTag(this.postTopicName).subscribe(data => {
-      console.log(data);
       this.posts = data;
     });
   }

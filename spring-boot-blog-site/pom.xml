@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.deymonet</groupId>
 	<artifactId>blogsite</artifactId>
-	<version>1.0.1</version>
+	<version>1.1.0</version>
 	<name>Personal Blog Site</name>
 	<description>Blog website built for info</description>
 	<dependencies>

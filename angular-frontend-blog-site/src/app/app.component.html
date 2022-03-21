@@ -1,35 +1,32 @@
 <!-- Navigation Bar -->
-<div class="blog-cover-bg">
+<div class="main-top-nav">
   <nav class="navbar navbar-expand-sm justify-content-end">
+    <div class="container sitenav-header">
+      <h2 class="navbar-brand">
+        Dasia Melvin<span style="color: rgb(0, 255, 136);">.</span>
+      </h2>
+      
+
       <ul class="navbar-nav blog-nav-tabs">
         <app-adminpage></app-adminpage>
         <li class="nav-item h5"><a class="nav-link" routerLink="/home"><i class="fas fa-home"></i> Home</a></li>
         <li class="nav-item h5"><a class="nav-link" routerLink="/about"><i class="fas fa-question-circle"></i> About</a></li>
         <li class="nav-item h5"><a class="nav-link" href="mailto:dasia.monet98@outlook.com"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
-  </nav>
-
-  <!-- Header + Description -->
-  <div class="blog-header">
-    <div class="container-fluid">
-      <div>
-        <h2>Hi! I'm Dasia Melvin<span style="color: rgb(0, 255, 136);">.</span></h2>
-      </div>
-      <div class="blog-desc">
-        <p><span style="color: rgb(0, 255, 136);">Full</span>-Stack / <span style="color: rgb(0, 255, 136);">Java</span> Developer / Caffeine-Addict </p>
-      </div>
     </div>
-  </div>
-
-  <!-- Listed Categories -->
-  <app-topic></app-topic>
+  </nav>
 </div>
+
+<!-- Listed Categories -->
+<app-topic></app-topic>
+
 <!-- Content -->
 <div class="blog-content">
   <div class="container">
     <router-outlet></router-outlet>
   </div>
 </div>
+
 
 <!-- Footer -->
 <footer class="fixed-bottom">

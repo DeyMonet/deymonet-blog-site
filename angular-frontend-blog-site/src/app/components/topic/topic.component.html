@@ -1,13 +1,40 @@
-<div class="blog-topic">
-    <div  class="container ">
-      <ul class="nav row blog-topic-list">
-        <li *ngFor="let topics of topic" class="nav-item col">
+<div class="sidenav-topics">
+  <div class="flex-shrink-0 p-3 pb-5 text-white ">
+    <div class="sidenav-title">
+      <h4>Blog Topics</h4>
+      <hr>
+    </div>
+    <ul class="nav nav-pills flex-column mb-auto blog-topic-list">
+      <li *ngFor="let topics of topic" class="nav-item"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}">
+        <a 
+          routerLink="/topic/{{ topics.topicName }}"
+          routerLinkActive="active-link">
+          <p style="margin-left: 7px;">
+            <span style="font-size: 23px;">
+              &#8250;
+            </span> {{ topics.topicName }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="fx-min-nav-topics">
+  <div class="container">
+      <ul class="nav nav-pills row">
+        <li *ngFor="let topics of topic" class="nav-item col"
+          routerLinkActive="fx-min-active-link"
+          [routerLinkActiveOptions]="{exact: true}">
           <a 
             routerLink="/topic/{{ topics.topicName }}"
-            routerLinkActive="active-link">
-            <p>{{ topics.topicName }}</p>
+            routerLinkActive="fx-min-active-link">
+            <p>
+              {{ topics.topicName }}
+            </p>
           </a>
         </li>
       </ul>
-    </div>
+  </div>
 </div>

@@ -24,11 +24,16 @@ export class PostService {
   
   getPostsByTopicTag(topicName: string): Observable<Post[]> {
     const postTopic = 
-            `${this.postUrl}/search/findByTopicTag?topicName=${topicName}&sort=desc`;
+            `${this.postUrl}/search/findByTopicTagOrderByPublishedAsc?topicName=${topicName}`;
     
     // this requires to be mapped to the response interface in order for it to obtain the correct data
     // if this is not present, then the array will be empty and nothing will show on the screen.
     return this.http.get<GetResponsePost>(postTopic).pipe(map(response => response._embedded.posts));
+  }
+
+  getFirstFivePosts(): Observable<Post[]> {
+    const postTopic = `${this.postUrl}/search/findFirst5ByOrderByPublishedDesc`;
+    return this.http.get<GetResponsePost>(postTopic).pipe(map(Response => Response._embedded.posts));
   }
 
   getPosts(): Observable<Post[]> {

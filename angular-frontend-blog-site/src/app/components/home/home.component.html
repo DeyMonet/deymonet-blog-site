@@ -1,24 +1,66 @@
 <div class="home-page-content">
-    <div class="home-posts">
+    <div class="container-fluid">
+        <div class="blog-desc pb-3 pt-5">
+            <h3>Hi! Welcome to My Blog Site</h3>
+        </div>
+        <div class="blog-tagline p-3">
+            <p>
+                The place where I talk about my coding experience, projects, and other topics
+            </p>
+        </div>
+    </div>
+    <div class="home-latest pb-5 m-auto">
+        <div class="container-fluid">
+            <h4 class="latest-header">Latest</h4>
+            <hr>
+        </div>
+
         <div *ngFor="let post of posts">
-            <div class="post-card">
+            <div class="home-post-card mb-5">
                 <div class="card-header">
                     <p class="post-card-title"> {{ post.title }} </p>
                     <p class="post-card-date">{{ post.published | date:'longDate'}}</p>
                 </div>
                 <div class="card-body">
-                    <p class="post-card-desc">{{ post.content | slice:0:200 }}<span style="opacity: 75%; letter-spacing: 2.5px; font-style: italic;">...</span></p>
+                    <p class="post-card-desc">{{ post.content | slice:0:250 }}<span style="opacity: 75%; letter-spacing: 2.5px; font-style: italic;">...</span></p>
                     <div class="post-card-seemore">
                         <a routerLink="/post/{{ post.title }}"
                         routerLinkActive="active-link">
-                        <p>See More >></p>
-                    </a>
+                            <p>See More >></p>
+                        </a>
                     </div>
                 </div>
             </div>
-        <div *ngIf="posts?.length === 0">
-            <p style="color: #fff;">Whoops! Nothing here at the moment. Don't worry, I post new things here pretty often. You'll see something pop-up eventually.</p>
+            <div *ngIf="posts?.length === 0" class="pt-3 pb-3">
+                <p style="color: #fff; padding: 3%;">Whoops! Nothing here at the moment. Don't worry, I post new things here pretty often. You'll see something pop-up eventually.</p>
+            </div>
         </div>
-        </div>
+
+
+        <!-- <div class="container p-3 d-flex flex-row">
+            <div *ngFor="let post of posts" class="col-sm align-self-stretch d-flex">
+                <div class="home-post-card">
+                    <div class="card-header">
+                        <p class="post-card-title"> {{ post.title }} </p>
+                    </div>
+                    <div class="card-body d-flex align-content-end flex-column">
+                        <div class="home-post-pill">
+                            <a routerLink="/topic/{{ post.topicTag }}">
+                                <p>{{ post.topicTag }}</p>
+                            </a>
+                        </div>
+                        <div class="post-card-seemore">
+                            <a routerLink="/post/{{ post.title }}"
+                            routerLinkActive="active-link">
+                                <p>See More >></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="posts?.length === 0" class="pt-3 pb-3">
+                <p style="color: #fff; padding: 3%;">Whoops! Nothing here at the moment. Don't worry, I post new things here pretty often. You'll see something pop-up eventually.</p>
+            </div>
+        </div> -->
     </div>
 </div>

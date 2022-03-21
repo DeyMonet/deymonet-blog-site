@@ -21,8 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   showAllPosts() {
-    this.postService.getPosts().subscribe(data => {
-      console.log(data);
+    this.postService.getFirstFivePosts().subscribe(data => {
       this.posts = data;
     })
   }

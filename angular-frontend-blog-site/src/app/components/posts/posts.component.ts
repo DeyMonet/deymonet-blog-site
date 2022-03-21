@@ -24,7 +24,6 @@ export class PostsComponent implements OnInit {
     const postTitle = this.route.snapshot.paramMap.get('title')!;
     
     this.postService.getPost(postTitle).subscribe((data) => {
-      console.log(data);
       this.post = data;
     });
   }
